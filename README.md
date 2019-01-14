@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React Image Slides
 
 [![codecov](https://codecov.io/gh/loadingwyn/react-imageslides/branch/master/graph/badge.svg)](https://codecov.io/gh/loadingwyn/react-imageslides)
@@ -58,3 +59,7 @@ ReactDOM.render(
 * ~~Add tests~~
 * Add pop-up animation effects
 * support pinch
+=======
+# react-imageslides-more
+react
+>>>>>>> e817afc9c562a3548673411afc0c517665646ce8
