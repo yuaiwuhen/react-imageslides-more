@@ -1,0 +1,2 @@
+# react-imageslides-more
+react
