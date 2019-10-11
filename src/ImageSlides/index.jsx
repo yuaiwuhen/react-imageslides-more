@@ -225,6 +225,7 @@ export default class ImageSlides extends PureComponent {
         }
         if (index < images.length - 1) {
             preload(images[index + 2]);
+            preload(images[index + 3]);
             this.setState(
                 {
                     index: index + 1,
@@ -244,6 +245,7 @@ export default class ImageSlides extends PureComponent {
         }
         if (index > 0) {
             preload(images[index - 2]);
+            preload(images[index - 3]);
             this.setState(
                 {
                     index: index - 1,
