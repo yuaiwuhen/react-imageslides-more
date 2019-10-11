@@ -10,6 +10,19 @@ import './style.css';
 const GUTTER_WIDTH = 10;
 const SWIPE_TRIGGER = 50;
 
+function preloadAll(imgs, index) {
+    let first = preload(imgs[index]);
+    preload(imgs[index+1]);
+    preload(imgs[index-1]);
+    if(null !== first){
+        first.then(() => {
+            imgs.map(img=>{preload(img);});
+        }, () => {
+        })
+    }
+    
+}
+
 function preload(url) {
     if (url) {
         const loader = new Image();
@@ -71,11 +84,9 @@ export default class ImageSlides extends PureComponent {
         const {
             index,
         } = this.state;
-        preload(images[index]);
-        preload(images[index + 2]);
-        preload(images[index + 1]);
-        preload(images[index - 1]);
-        preload(images[index - 2]);
+        preloadAll(images, index);
+        // preload(images[index + 1]);
+        // preload(images[index - 1]);
     }
     
     componentWillReceiveProps(newProps) {
@@ -226,7 +237,7 @@ export default class ImageSlides extends PureComponent {
             onNext();
         }
         if (index < images.length - 1) {
-            // preload(images[index + 3]);
+            // preload(images[index + 2]);
             this.setState(
                 {
                     index: index + 1,
