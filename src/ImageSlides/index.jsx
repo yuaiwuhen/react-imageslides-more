@@ -10,19 +10,6 @@ import './style.css';
 const GUTTER_WIDTH = 10;
 const SWIPE_TRIGGER = 50;
 
-function preloadAll(imgs, index) {
-    let first = preload(imgs[index]);
-    preload(imgs[index+1]);
-    preload(imgs[index-1]);
-    if(null !== first){
-        first.then(() => {
-            imgs.map(img=>{preload(img);});
-        }, () => {
-        })
-    }
-    
-}
-
 function preload(url) {
     if (url) {
         const loader = new Image();
@@ -77,6 +64,22 @@ export default class ImageSlides extends PureComponent {
         };
     }
     
+    preloadAll = (imgs, index) => {
+        this.preloaded = this.preloaded ? this.preloaded : [];
+        if (this.preloaded.indexOf(imgs[index]) === -1) {
+            preload(imgs[index]);
+            this.preloaded.push(imgs[index]);
+        }
+        imgs.map((img, key) => {
+            if ((index - 4 < key) && (index + 4 > key)) {
+                if (this.preloaded.indexOf(img) === -1) {
+                    this.preloaded.push(img);
+                    preload(img);
+                }
+            }
+        });
+    }
+    
     componentDidMount() {
         const {
             images,
@@ -84,7 +87,7 @@ export default class ImageSlides extends PureComponent {
         const {
             index,
         } = this.state;
-        preloadAll(images, index);
+        this.preloadAll(images, index);
         // preload(images[index + 1]);
         // preload(images[index - 1]);
     }
@@ -237,7 +240,7 @@ export default class ImageSlides extends PureComponent {
             onNext();
         }
         if (index < images.length - 1) {
-            // preload(images[index + 2]);
+            this.preloadAll(images, index);
             this.setState(
                 {
                     index: index + 1,
@@ -256,7 +259,7 @@ export default class ImageSlides extends PureComponent {
             onPre();
         }
         if (index > 0) {
-            // preload(images[index - 2]);
+            this.preloadAll(images, index);
             this.setState(
                 {
                     index: index - 1,
