@@ -72,8 +72,10 @@ export default class ImageSlides extends PureComponent {
             index,
         } = this.state;
         preload(images[index]);
+        preload(images[index + 2]);
         preload(images[index + 1]);
         preload(images[index - 1]);
+        preload(images[index - 2]);
     }
     
     componentWillReceiveProps(newProps) {
@@ -224,8 +226,7 @@ export default class ImageSlides extends PureComponent {
             onNext();
         }
         if (index < images.length - 1) {
-            preload(images[index + 2]);
-            preload(images[index + 3]);
+            // preload(images[index + 3]);
             this.setState(
                 {
                     index: index + 1,
@@ -244,8 +245,7 @@ export default class ImageSlides extends PureComponent {
             onPre();
         }
         if (index > 0) {
-            preload(images[index - 2]);
-            preload(images[index - 3]);
+            // preload(images[index - 2]);
             this.setState(
                 {
                     index: index - 1,

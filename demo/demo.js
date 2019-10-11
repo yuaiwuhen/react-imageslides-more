@@ -3,23 +3,38 @@ import ReactDOM from 'react-dom';
 import ImageSlides from '../src';
 
 const images = [
-    "https://img-bcy-qn.pstatp.com/user/3313615/item/c0qsh/1aced03d341d4adfb353418411eca215.jpg/w650", "https://img-bcy-qn.pstatp.com/user/3313615/item/c0qsh/310bcfc2932a4c26b60fbaa0f155c40c.jpg/w650", "https://img-bcy-qn.pstatp.com/user/3313615/item/c0qsh/59c17924e45f42e68309d252dad1d2cf.jpg/w650", "https://img-bcy-qn.pstatp.com/user/3313615/item/c0qsh/83bcef68fa6d4c068be7f7f5ba1722e8.jpg/w650", "https://img-bcy-qn.pstatp.com/user/3313615/item/c0qsh/5e2483e39d944195813f4f4caffe1af9.jpg/w650"
-
+    "https://img-bcy-qn.pstatp.com/user/3126641672067060/item/c0rhf/jody1acp63wxkfquwe9mk3xzehthdawn.jpg/w650",
+    "https://img-bcy-qn.pstatp.com/user/3126641672067060/item/c0rhf/mojehs6zfi10izuq1ahwmgykojqeejbs.jpg/w650",
+    "https://img-bcy-qn.pstatp.com/user/3126641672067060/item/c0rhf/txulrxof8cxpihezsgliboyzh3cae0cd.jpg/w650",
+    "https://img-bcy-qn.pstatp.com/user/3126641672067060/item/c0rhf/fgs6tnzuslmkkkkdeudy6osxzsficev1.jpg/w650",
+    "https://img-bcy-qn.pstatp.com/user/3126641672067060/item/c0rhf/uojnta4e17wxeoxchpiklvtvrvy11v0n.png/w650",
+    "https://img-bcy-qn.pstatp.com/user/3126641672067060/item/c0rhf/rzbusuu320o9gzs5qdoiszttqaw6rfh6.jpg/w650",
+    "https://img-bcy-qn.pstatp.com/user/3126641672067060/item/c0rhf/3lgxzdwlbxzuf1npejvekesuy9zdwbxv.jpg/w650",
+    "https://img-bcy-qn.pstatp.com/user/3126641672067060/item/c0rhf/q3hsh1gkknjutj6aqvrt3jmupyfbgcnb.jpg/w650"
 ];
 const imagesPre = [
-    "https://img-bcy-qn.pstatp.com/user/102227864682/item/c0qsh/46ef96d6876146b386e8bd8bd335de1a.jpg/w650", "https://img-bcy-qn.pstatp.com/user/102227864682/item/c0qsh/dfd0a0f781034d3397e5c384e53cd6ec.jpg/w650"
-    , "https://img-bcy-qn.pstatp.com/user/102227864682/item/c0qsh/dbc1b2a288734e7583b3743ba4a4f690.jpg/w650"
-    , "https://img-bcy-qn.pstatp.com/user/102227864682/item/c0qsh/ae9575060e24494ba978e177edcb90f5.jpg/w650"
-    , "https://img-bcy-qn.pstatp.com/user/102227864682/item/c0qsh/005e8159017445a09286375bf8954920.jpg/w650"
-
-];
+        "http://imglf4.nosdn0.126.net/img/YnpDNTJBbW9xLzFmZXF5dTF2THJscmdEMzJkYWE4aFp1OHRNZk83czdIMjJWd1QwRGsyU1JBPT0.jpg?imageView&thumbnail=650x0&quality=100",
+        "http://imglf6.nosdn0.126.net/img/YnpDNTJBbW9xLzFmZXF5dTF2THJsbDlsR0Z3N2tpR0FWU0doUFJaVm5PbTBOZHA1bHk5bkpBPT0.jpg?imageView&thumbnail=650x0&quality=100",
+        "http://imglf4.nosdn0.126.net/img/YnpDNTJBbW9xLzFmZXF5dTF2THJscWVNWCtUc2JsVU5OTCtTYUpHa2U3Q0lBMCtmZ0FlYXR3PT0.jpg?imageView&thumbnail=650x0&quality=100",
+        "http://imglf3.nosdn0.126.net/img/YnpDNTJBbW9xLzFmZXF5dTF2THJsaVMzMkMyMGZpMmVlVkxuU21mbDZuZXdjTUF4ZzR1K2ZnPT0.jpg?imageView&thumbnail=650x0&quality=100",
+        "http://imglf6.nosdn0.126.net/img/YnpDNTJBbW9xLzFmZXF5dTF2THJsdEsram9BMTVCQWdpSGxPSzJ3ZU51bEd5ZDVhZ3JUTmR3PT0.jpg?imageView&thumbnail=650x0&quality=100",
+        "http://imglf3.nosdn0.126.net/img/YnpDNTJBbW9xLzFmZXF5dTF2THJsdklCaHluUnZ6QytMclR6UTYxcTBiRlNvOEpNNTV1UCt3PT0.jpg?imageView&thumbnail=650x0&quality=100",
+        "http://imglf6.nosdn0.126.net/img/YnpDNTJBbW9xLzFmZXF5dTF2THJsbnM0cnQwdFp1Zm9uY1JNWjlSV1U1MlVZaGtTSXg2Z0F3PT0.jpg?imageView&thumbnail=650x0&quality=100",
+        "http://imglf5.nosdn0.126.net/img/YnpDNTJBbW9xLzFmZXF5dTF2THJsc3F2YyszS0xaZS9UTEo5aTJFQyt3bUhPeGlIbDU1Slh3PT0.jpg?imageView&thumbnail=650x0&quality=100",
+        "http://imglf6.nosdn0.126.net/img/YnpDNTJBbW9xLzFmZXF5dTF2THJsdUNqRmRpQVFOMGpHTGI3cjFIdGNSeU9ZbjZSaGwxSWZnPT0.jpg?imageView&thumbnail=650x0&quality=100",
+        "http://imglf4.nosdn0.126.net/img/YnpDNTJBbW9xLzFmZXF5dTF2THJsdUQxK3RRc1J6QkkyRWVncy93N0RCTWFyODBaV3FiZmVBPT0.jpg?imageView&thumbnail=650x0&quality=100"
+    ];
 
 const imagesNext = [
-    "https://img-bcy-qn.pstatp.com/user/105015619949/item/c0qsh/8e2cd894caba4a01907869deb8488ce3.jpg/w650"
-    , "https://img-bcy-qn.pstatp.com/user/105015619949/item/c0qsh/e142128caa464212bc25945941aa6cc0.jpg/w650"
-    , "https://img-bcy-qn.pstatp.com/user/105015619949/item/c0qsh/c7db4d8a0d3247ee883313393a7cdbab.jpg/w650"
-    , "https://img-bcy-qn.pstatp.com/user/105015619949/item/c0qsh/a24025374cb94ffda7fcb12ec0a9157f.jpg/w650"
-    , "https://img-bcy-qn.pstatp.com/user/105015619949/item/c0qsh/dc92c10264e540c29731966dc6b1e8fd.jpg/w650"
+    "https://wx3.sinaimg.cn/large/006TwV90gy1g7lxlm83bnj316o1s0aya.jpg",
+    "https://wx2.sinaimg.cn/large/006TwV90gy1g7lxldzeeaj316o1s0h7m.jpg",
+    "https://wx1.sinaimg.cn/large/006TwV90gy1g7lxlrtj9kj31s016oh7r.jpg",
+    "https://wx4.sinaimg.cn/large/006TwV90gy1g7lxlkp8lbj34dd2wxnpg.jpg",
+    "https://wx3.sinaimg.cn/large/006TwV90gy1g7lxlqi56kj31s016o1kx.jpg",
+    "https://wx1.sinaimg.cn/large/006TwV90gy1g7lxlp0twaj316o1s01kx.jpg",
+    "https://wx3.sinaimg.cn/large/006TwV90gy1g7lxlswdfbj312x1md1kx.jpg",
+    "https://wx3.sinaimg.cn/large/006TwV90gy1g7lxlu9ixfj31ov14kb0r.jpg",
+    "https://wx1.sinaimg.cn/large/006TwV90gy1g7lxltk7w6j31g40yraqi.jpg"
 ];
 
 class Demo extends Component {
