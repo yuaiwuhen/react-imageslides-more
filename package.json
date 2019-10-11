@@ -1,6 +1,6 @@
 {
   "name": "react-imageslides-more",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "在 react-imageslides 基础上添加了滑动切换图集 (自用)",
   "main": "dist/bundle.js",
   "scripts": {
